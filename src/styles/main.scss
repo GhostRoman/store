@@ -1,0 +1,77 @@
+// Цветовая схема
+$rozetka-primary: #e91b1b;  // Основной красный цвет
+$rozetka-secondary: #2c2c2c;  // Темный цвет для фона или текста
+$rozetka-accent: #f7f7f7;  // Светлый акцентный цвет фона
+
+// Глобальные стили
+body {
+  font-family: 'Roboto', sans-serif;  // Шрифт по умолчанию
+  background-color: $rozetka-accent;  // Фон всего приложения
+}
+
+// Хедер
+.q-header {
+  background: rgb(45, 45, 45) !important;  // Темный фон для хедера
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);  // Легкая тень
+  border-bottom: 1px solid #e0e0e0;  // Линия внизу хедера
+
+  .q-toolbar {
+    max-width: 1200px;  // Ограничиваем максимальную ширину
+    margin: 0 auto;  // Центрируем
+    padding: 1em;  // Отступы внутри тулбара
+  }
+}
+
+// Основной контейнер
+.container {
+  max-width: 1200px;  // Ограничение ширины
+  margin: 0 auto;  // Центрирование по горизонтали
+  padding: 20px;  // Отступы вокруг
+}
+
+// Карточка товара
+.product-card {
+  background: white !important;  // Белый фон
+  border-radius: 12px !important;  // Скругленные углы
+  overflow: hidden;  // Чтобы изображение не выходило за пределы
+  border: 1px solid #e0e0e0;  // Легкий серый бордер
+
+  .q-card__section {
+    padding: 16px;  // Отступы внутри секции
+  }
+}
+
+// Кнопки
+.q-btn {
+  text-transform: uppercase;  // Все буквы в верхнем регистре
+  font-weight: 500;  // Средний вес шрифта
+  letter-spacing: 0.5px;  // Чуть больше расстояния между буквами
+
+  &--primary {
+    background: $rozetka-primary !important;  // Красный фон для кнопок
+  }
+}
+
+// Попап корзины
+.cart-popup {
+  .q-card {
+    max-width: 500px;  // Ограничиваем максимальную ширину попапа
+    width: 100%;  // Чтобы он занимал всю доступную ширину
+
+    .q-list {
+      max-height: 60vh;  // Ограничиваем высоту списка до 60% от высоты экрана
+      overflow-y: auto;  // Добавляем вертикальный скролл при переполнении
+    }
+  }
+}
+
+// Адаптивность
+@media (max-width: 768px) {
+  .container {
+    padding: 10px;  // Меньше отступов на мобильных устройствах
+  }
+  
+  .product-card {
+    max-width: 100%;  // Карточки товара будут занимать всю доступную ширину
+  }
+}
